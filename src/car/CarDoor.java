@@ -5,7 +5,7 @@ package car;
  */
 public class CarDoor {
 
-    private CarWindow window = new CarWindow();
+    CarWindow window = new CarWindow();
 
     private boolean doorIsOpen;
 
@@ -36,23 +36,6 @@ public class CarDoor {
         }
     }
 
-    public void openWindow(){
-        window.windowIsOpen = true;
-    }
-
-    public void closeWindow(){
-        window.windowIsOpen = false;
-    }
-
-    public void switchWindow(){
-        if (window.windowIsOpen == true){
-            closeWindow();
-        }
-        else {
-            openWindow();
-        }
-    }
-
     public void objectInfo(){
         System.out.println("Объект - дверь");
         System.out.println("Дверь открыта: " + doorIsOpen);
@@ -62,5 +45,21 @@ public class CarDoor {
 
     private class CarWindow{
         private boolean windowIsOpen;
+        public void openWindow(){
+            window.windowIsOpen = true;
+        }
+
+        public void closeWindow(){
+            window.windowIsOpen = false;
+        }
+
+        public void switchWindow(){
+            if (windowIsOpen == true){
+                closeWindow();
+            }
+            else {
+                openWindow();
+            }
+        }
     }
 }
